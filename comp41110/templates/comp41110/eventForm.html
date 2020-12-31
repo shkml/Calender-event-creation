@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'comp41110/main.css' %}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/home">Home</a>
+        <a class="active" href="/eventForm">Create Event</a>
+        <a href="/fetchEvent">Fetch events</a>
+      </div>
+    <div class='calButton'>
+        <p>
+            {% include "comp41110/messages.html" %}
+            {% block content %}
+            {% endblock %}
+        </p>
+        <p style="color:#009879; font-size: 20px; font-weight: bold;">Enter the event information</p>
+        <form action="/eventForm/" method="post">
+            {% csrf_token %}
+          <label for="eventName">Event name</label><br>
+          <input type="text" id="eventName" name="eventName" placeholder="Enter event name" required><br><br>
+
+          <label for="eventDate">Event Date</label><br>
+          <input type="text" id="eventDate" name="eventDate" placeholder="Enter date yyyy-mm-dd" required><br><br>
+
+          <label for="eventStartTime">Event start time</label><br>
+          <input type="text" id="eventStartTime" name="eventStartTime" placeholder="Enter start time HH:MM" required><br>
+
+            <label for="eventEndTime">Event end time</label><br>
+          <input type="text" id="eventEndTime" name="eventEndTime" placeholder="Enter end time HH:MM" required><br>
+            <small>Valid time in 24 hours (00:00 to 23:59).</small><br><br>
+
+            <label for="eventNotes">Notes</label><br>
+          <textarea style="width: 50%" type="text" id="eventNotes" name="eventNotes" placeholder="Enter notes if any (Optional)" rows="4"></textarea>
+            <br><br>
+
+          <input type="submit" value="Submit"><br><br>
+
+        </form>
+    </div>
+  </body>
+</html>

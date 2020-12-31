@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP41110 - Project</title>
+{#    <link rel="stylesheet" href="style.css">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'comp41110/main.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/home">Home</a>
+        <a href="/eventForm">Create Event</a>
+        <a href="/fetchEvent">Fetch events</a>
+      </div>
+
+    <p class="calButton" style="color:#009879; font-size: 20px; font-weight: bold;">This page will display the calendar for year 2021.</p>
+      <div id ="calender"></div>
+      <script src="{% static 'comp41110/script.js' %}"></script>
+</body>
+</html>

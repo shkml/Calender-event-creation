@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'comp41110/main.css' %}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/home">Home</a>
+        <a href="/eventForm">Create Event</a>
+        <a class="active" href="/fetchEvent">Fetch events</a>
+      </div>
+    <div class='calButton'>
+        <p style="color:#009879; font-size: 20px; font-weight: bold;">Here is a list of your events - </p>
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Event name</th>
+                <th scope="col">Event start time</th>
+                <th scope="col">Event end time</th>
+                <th scope="col">Event date</th>
+                <th scope="col">Delete?</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in Events %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ event.eventName }}</td>
+                    <td>{{ event.eventStartTime }}</td>
+                    <td>{{ event.eventEndTime }}</td>
+                    <td>{{ event.eventDate }}</td>
+                    <td><a class='btn btn-sm btn-danger' href="{% url 'delete-event' event.eventId %}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            {% include "comp41110/messages.html" %}
+            {% block content %}
+            {% endblock %}
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>
