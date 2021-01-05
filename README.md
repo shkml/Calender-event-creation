@@ -10,12 +10,17 @@ Here, ccProj is my virtual environment
 
 2. Install below requirements
 asgiref==3.3.1
+
 Django==3.1.4
-django
+
 crispy forms==1.10.0
+
 mysqlclient==2.0.2
+
 pytz==2020.5
+
 sqlparse==0.4.1
+
 using pip install – the package as specified above. 
 
 3. python manage.py migrate 
