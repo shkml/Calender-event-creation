@@ -9,17 +9,17 @@ In order to run this code, user is supposed to install below packages -
 Here, ccProj is my virtual environment
 
 2. Install below requirements
-asgiref==3.3.1
+- asgiref==3.3.1
 
-Django==3.1.4
+- Django==3.1.4
 
-crispy forms==1.10.0
+- crispy forms==1.10.0
 
-mysqlclient==2.0.2
+- mysqlclient==2.0.2
 
-pytz==2020.5
+- pytz==2020.5
 
-sqlparse==0.4.1
+- sqlparse==0.4.1
 
 using pip install – the package as specified above. 
 
