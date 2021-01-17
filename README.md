@@ -1,6 +1,8 @@
 # Calender-event-creation
 This website enables a user to see the calender for year 2021, which can be configured from backend. User can create and delete the events as and when required. Below is a little description of how we can run this code.
 
+The preview of this website can be seen in in settings page. 
+
 In order to run this code, user is supposed to install below packages -
 1. Create a virtual environment
 - Installing the virtual environment- pip install virtualenv
